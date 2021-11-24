@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/stylesheet.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<ul>
+    <li><a href="{% url 'home_page' %}">Home</a></li>
+    <li><a href="{% url 'student_list' %}">Student</a></li>
+    <li><a href="#">Teacher</a></li>
+    <li><a href="{% url 'course_list' %}">Course</a></li>
+    <li id='buttonlogout'>
+        <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+        </form>
+    </li>
+    <li style="float: right"><a href="#"> @ {{ request.user.last_name }}</a></li>
+{#<img src="{% static 'accounts/images/profileicon.jpg' %}" height="10" width="5" alt="profile"/>#}
+</ul>
+{% endif %}
+{% block content %}
+{% endblock %}
+</body>
+</html>

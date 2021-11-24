@@ -1,0 +1,7 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<h1> Hi {{ request.user.first_name}}</h1>
+    {{ object.id }}
+    {{ object.email }}
+{% endblock %}

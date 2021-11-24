@@ -1,0 +1,12 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<h1>Welcome to CSEDU</h1>
+ {% load static %} <img src="{% static 'accounts/images/CSEDU.png' %}" alt="CSEDU" />
+<div id="form1">
+<form action="{% url 'login_page' %}" method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" id="submitbutton" value="Login">
+</form>
+</div>
+{% endblock %}

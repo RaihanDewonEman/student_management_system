@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+    <h1>Create Course</h1>
+    <div class="course_form">
+        <form action="{% url 'course' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" id="submitbutton" value="Create">
+        </form>
+    </div>
+
+{% endblock %}

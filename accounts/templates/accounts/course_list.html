@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+    <h1>All Courses</h1>
+    <div class="firstrow">
+        {% for course in course_list %}
+            <div class="secondrow"> <h4>{{ course.code }} {{ course.title }} </h4></div>
+        {% empty %}
+            No Course yet.
+        {% endfor %}
+    </div>
+{% endblock %}

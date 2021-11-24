@@ -1,0 +1,12 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<h1>Welcome to CSEDU</h1>
+ {% load static %} <img src="{% static 'accounts/images/CSEDU.png' %}" height="200px" width="100%" alt="CSEDU" />
+<div id="">
+<ul>
+    <h3><li><a href="{% url 'student' %}">Create Student</a></li></h3>
+    <h3><li><a href="{% url 'course' %}">Create Course</a></li></h3>
+    <h3><li><a href="{% url 'create_user' %}">Create User</a></li></h3>
+</ul>
+</div>
+{% endblock %}

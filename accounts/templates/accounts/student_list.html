@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+    <h1>All Students</h1>
+    <div class="firstrow">
+        {% for student in student_list %}
+            <div class="secondrow"> <h4>{{ student.roll_number }} {{ student.user_id }} </h4></div>
+        {% empty %}
+            No student yet.
+        {% endfor %}
+    </div>
+{% endblock %}
